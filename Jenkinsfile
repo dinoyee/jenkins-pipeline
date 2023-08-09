@@ -29,5 +29,11 @@ pipeline {
       }
     }
 
+    stage('Done2') {
+      steps {
+        sh 'echo Dono2'
+      }
+    }
+
   }
 }
