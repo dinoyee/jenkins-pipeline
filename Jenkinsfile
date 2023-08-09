@@ -7,9 +7,25 @@ pipeline {
   }
   stages {
     stage('Build') {
+      parallel {
+        stage('Build') {
+          steps {
+            echo 'Build'
+          }
+        }
+
+        stage('Test') {
+          steps {
+            echo 'Test'
+          }
+        }
+
+      }
+    }
+
+    stage('Done') {
       steps {
-        sh '''echo 123
-echo 1111111'''
+        echo 'Done'
       }
     }
 
